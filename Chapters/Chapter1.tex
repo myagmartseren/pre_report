@@ -35,6 +35,7 @@ Applications
 Encryption is used in a wide range of applications, including secure online transactions, digital signatures, secure email communication, online banking, e-commerce, and data storage. It is also used to secure sensitive information in industries such as healthcare, finance, and government, where privacy and confidentiality are paramount.
 
 In conclusion, encryption is a critical tool for protecting sensitive information, ensuring privacy, and securing digital communications. Its significance and importance continue to grow as digital technologies become more pervasive and the threats to digital security become more sophisticated. Encryption technology is continually evolving to meet the increasing security needs of individuals and organizations, ensuring that sensitive information remains secure and confidential.
+
 %-------------------------------------------------------------------------------
 %	SECTION 2
 %-------------------------------------------------------------------------------
@@ -47,15 +48,17 @@ Attribute-based encryption: ABE allows access to data to be controlled based on 
 %-------------------------------------------------------------------------------
 %	SECTION 3
 %-------------------------------------------------------------------------------
+
 \section{Proxy Re-Encryption схем}
 
+Прокси дахин шифрлэлт нь 
 Прокси дахин шифрлэлт нь нийтийн түлхүүрээр шифрлэлтийн нэг хэлбэр бөгөөд хэрэглэгч Алиса-ийн шифрийг Bob-д тайлах боломжийг олгодог.
 
 Үндсэн хоёр төрөлтэй.
 
-Unidirectional PRE: In unidirectional PRE, the proxy can transform ciphertext from the data owner's key to the delegatee's key, but not vice versa. This means that the delegatee can only decrypt data that has been specifically re-encrypted for them, and cannot access the original data or re-encrypt it for someone else.
+Unidirectional PRE: Зөвхөн нэг талдаа дахин шифрлэх боломжтой.
 
-Bidirectional PRE: In bidirectional PRE, the proxy can transform ciphertext in both directions, allowing for more flexibility in data sharing. This means that the delegatee can both access the original data and re-encrypt it for someone else.
+Bidirectional PRE: 2 талдаа дахин шифрлэх боломжтой.
 \\
 
 Some features of PRE schemes include:
@@ -67,3 +70,9 @@ Access control: PRE allows data owners to control who can access their data and 
 Efficiency: PRE can be more efficient than traditional re-encryption techniques, as it does not require the data to be decrypted and re-encrypted.
 
 Security: PRE provides a high level of security, as the proxy does not have access to the data itself and can only transform the encrypted dat
+
+%-------------------------------------------------------------------------------
+%	SECTION 3
+%-------------------------------------------------------------------------------
+
+\section{Бүлгийн Дүгнэлт}
