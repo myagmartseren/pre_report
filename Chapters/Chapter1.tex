@@ -15,51 +15,83 @@
 %-------------------------------------------------------------------------------
 %	SECTION 1
 %-------------------------------------------------------------------------------
+
 \section{Шифрлэлт, түүний ач холбогдол, ангилал, хэрэглээ}
+Мэдээллийн аюулгүй байдал үндсэн гурван зарчимыг тэнцвэртэй хангахыг зоридог. 
+\begin{itemize}
+    \item \textbf{Нууцлаг байдал (Confidentiality)}: Мэдээлэлийг нууц хэвээр нь хамгаалж үлдэх. Санаатай болон санамсаргүй мэдээллийг зөвшөөрөлгүй хуваалцах тараахаас сэргийлэх.
+    \begin{itemize}
+        \item Өгөгдлийн нууцлал (Data1 confidentiality)
+        \item хувийн нууц (Privacy)
+    \end{itemize}
+    \item \textbf{Бүрэн бүтэн байдал (Integrity)}: Өгөгдөлд үнэн зөв найдвартай гадны нөлөө ороогүйг шалгах, бүрэн бүтэн хадаглах. 
+    \begin{itemize}
+        \item Өгөгдлийн бүрэн бүтэн байдал (Data integrity)
+        \item Системийн бүрэн бүтэн байдал (System integrity) 
+    \end{itemize}
+    \item \textbf{Хүртээмжтэй байдал (Availability):} Тухайн системийн хэрэглэгчид хүртээмжтэй байх.
+\end{itemize}
+Мэдээлэл болон өгөгдлийг шифрлэлт хийсэнээр нууцлаг байдлыг хангах хамгийн том давуу тал мөн бүрэн бүтэн байдал хүртээмжтэй байдал дээр ашиглах боломжтой.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.7]{Figures/cia_traid}
+\caption[CIA гурвалжин]{CIA гурвалжин}
+\label{fig:Electron}
+\end{figure}
 
-Encryption is the process of converting plaintext or readable data into ciphertext or unreadable data using an encryption algorithm. The ciphertext can only be decrypted and read by authorized parties who possess the decryption key. Encryption is a critical tool for protecting sensitive information, ensuring the privacy of individuals and organizations, and securing digital communications. Here are some of the significance, importance, and applications of encryption:
+Шифрлэлт ерөнхийд нь гурав ангилна.
+\begin{itemize}
+    \item \textbf{Тэгш хэмт шифрлэлт (symmetric):}
+    \item \textbf{Тэгш бус шифрлэлт (asymmetric):}
+    \item \textbf{Хаш (Hash)}
+\end{itemize}
 
-Confidentiality
-Encryption helps to maintain the confidentiality of sensitive data by making it unreadable to unauthorized parties. It ensures that only authorized parties can access and read the information, protecting it from theft, eavesdropping, or interception.
+Нууцлаг байдлыг хангахад
+\begin{itemize}
+    \item Тэгш хэмт шифрлэлт (symmetric)
+    \item Тэгш бус шифрлэлт (asymmetric)
+    \item Хаш (Hash)
+\end{itemize}
 
-Privacy
-Encryption ensures the privacy of individuals and organizations by securing their personal and sensitive information. It allows individuals to control who can access their information and how it can be used, reducing the risk of identity theft, fraud, or other forms of privacy violations.
-
-Authentication
-Encryption helps to ensure the authenticity of data and messages by verifying the identity of the sender and ensuring that the message has not been tampered with during transmission. This is particularly important in online transactions, where the authenticity of data and messages is crucial to prevent fraud and ensure trust.
-
-Data Integrity
-Encryption helps to maintain the integrity of data by ensuring that it has not been tampered with or altered during transmission or storage. It allows data to be stored and transmitted securely without the risk of unauthorized modifications, ensuring the accuracy and reliability of information.
-
-Applications
-Encryption is used in a wide range of applications, including secure online transactions, digital signatures, secure email communication, online banking, e-commerce, and data storage. It is also used to secure sensitive information in industries such as healthcare, finance, and government, where privacy and confidentiality are paramount.
-
-In conclusion, encryption is a critical tool for protecting sensitive information, ensuring privacy, and securing digital communications. Its significance and importance continue to grow as digital technologies become more pervasive and the threats to digital security become more sophisticated. Encryption technology is continually evolving to meet the increasing security needs of individuals and organizations, ensuring that sensitive information remains secure and confidential.
+Бүрэн бүтэн байдалыг хангахад ашиглана.
+\begin{itemize}
+    \item Хаш (Hash)
+    \item Мессежийн баталгаажуулалтын код (MACs)
+    \item Тоон гарын үсэг (Digital Signatures)
+\end{itemize}
 
 %-------------------------------------------------------------------------------
 %	SECTION 2
 %-------------------------------------------------------------------------------
+
 \section{Орчин үеийн ширфлэлтийн схемүүд}
-Homomorphic encryption: While homomorphic encryption allows computations to be performed on encrypted data, it does not provide delegation or access control features like PRE.
 
-Secure multi-party computation: SMPC allows multiple parties to jointly compute a function over their private inputs without revealing those inputs to each other, but it does not provide delegation or access control features like PRE.
+Identity-based encryption (IBE): This is a type of public key encryption that allows users to encrypt and decrypt data using their identities instead of public keys. IBE can be used for secure data sharing in scenarios where users are known by their identities.
 
-Attribute-based encryption: ABE allows access to data to be controlled based on certain attributes, but it does not provide delegation or re-encryption features like PRE.
+Attribute-based encryption (ABE): This is a type of encryption that allows access to data based on predefined attributes, such as age, job title, or organizational role. ABE can be used for fine-grained access control to data, and can be used in scenarios where access is granted based on certain attributes.
+
+Homomorphic encryption (HE): This is a type of encryption that allows computations to be performed on encrypted data without first decrypting it. HE can be used for secure data processing in scenarios where data needs to be kept confidential while still allowing for computation.
+
+Secure multiparty computation (MPC): This is a cryptographic technique that allows multiple parties to jointly compute a function over their private inputs without revealing their inputs to each other. MPC can be used for secure data processing in scenarios where data needs to be kept confidential and multiple parties need to collaborate.
+
 %-------------------------------------------------------------------------------
 %	SECTION 3
 %-------------------------------------------------------------------------------
 
 \section{Proxy Re-Encryption схем}
 
-Прокси дахин шифрлэлт нь 
-Прокси дахин шифрлэлт нь нийтийн түлхүүрээр шифрлэлтийн нэг хэлбэр бөгөөд хэрэглэгч Алиса-ийн шифрийг Bob-д тайлах боломжийг олгодог.
+Прокси дахин шифрлэлт нь нийтийн түлхүүрээр шифрлсэн өгөгдөлийг дахин ширфлэж өөр хувийн түлхүүрээр тайлах боломжийг олгодог.
+
+Давуу талууд:
+Гурав дахь сервер гэх мэт өгөгдлийг байршуулах боломжтой.
+
+Сул талууд:
 
 Үндсэн хоёр төрөлтэй.
 
 Unidirectional PRE: Зөвхөн нэг талдаа дахин шифрлэх боломжтой.
 
 Bidirectional PRE: 2 талдаа дахин шифрлэх боломжтой.
-\\
 
 Some features of PRE schemes include:
 
@@ -72,7 +104,7 @@ Efficiency: PRE can be more efficient than traditional re-encryption techniques,
 Security: PRE provides a high level of security, as the proxy does not have access to the data itself and can only transform the encrypted dat
 
 %-------------------------------------------------------------------------------
-%	SECTION 3
+%	SECTION 4
 %-------------------------------------------------------------------------------
 
 \section{Бүлгийн Дүгнэлт}
