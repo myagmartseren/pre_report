@@ -125,7 +125,7 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 \authorlong{Амгаланбаатарын Мягмарцэрэн} % Таны бүтэн нэр, нүүр болон хураангуй хуудсанд ашигласан. Дурын газарт бол \longname командыг хэрэглэнэ 
 \authorcode{B190970106} % Таны оюутны код, үзлэгийн хуудсанд ашигласан.  Дурын газарт бол \studentcode командыг хэрэглэнэ 
 \addresses{b190970106@must.edu.com} % Таны хаяг, одоогоор ашиглаагүй. Өөр газарт бол \addressname командыг хэрэглэнэ
-\phonenumber{99899441, 98189441} % Таны хаяг, одоогоор ашиглаагүй. Өөр газарт бол \phonenum командыг хэрэглэнэ
+\phonenumber{99754252} % Таны хаяг, одоогоор ашиглаагүй. Өөр газарт бол \phonenum командыг хэрэглэнэ
 
 \supervisor{доктор (Ph.D) В.Нямсүрэн} % Удирдагчийн нэр, нүүр хуудсанд ашиглана. Дурын газарт бол \supname командыг хэрэглэнэ
 \reader{магистр Г.Баяр} % Шүүмжлэгчийн нэр, Дурын газарт бол \readname командыг хэрэглэнэ
@@ -134,7 +134,7 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 \degreeind{D061940} % Мэргэжлийн индекс, нүүр болон хураангуй хуудсанд ашигласан. Өөр газарт бол \degreeid командыг хэрэглэнэ
 \degree{Мэдээллийн системийн аюулгүй байдал} % Боловсролын зэрэг, нүүр болон хураангуй хуудсанд ашигласан. Өөр газарт бол \degreename командыг хэрэглэнэ
 \subject{Мэдээллийн сүлжээ, аюулгүй байдлын салбар} % Таны салбар, одоогоор ашиглаагүй. Дурынр газарт бол \subjectname командыг ашиглана
-\keywords{мэдээллийн аюулгүй байдал, тоон гарын үсэг} % Түлхүүр үгс, одоогоор ашиглаагүй. Дурын газарт бол \keywordnames командыг хэрэглэнэ
+\keywords{мэдээллийн аюулгүй байдал, прокси дахин шифрлэлт} % Түлхүүр үгс, одоогоор ашиглаагүй. Дурын газарт бол \keywordnames командыг хэрэглэнэ
 \department{Мэдээллийн сүлжээ, аюулгүй байдлын салбар} % Сургууль/тэнхмийн нэр, нүүр болон хураангуй хуудсанд ашигласан. Дурын газарт бол\deptname командыг хэрэглэнэ
 \deptchair{доктор (Ph.D) Б.Мөнхбаяр} % Тэнхим/эрхлэгчийн нэр, нүүр болон хураангуй хуудсанд ашигласан. Дурын газарт бол\chairname командыг хэрэглэнэ
 \group{Робот техникийн баг} % Судалгааны баг/тэнхмийн нэр, нүүр хуудсанд ашигласан. Дурын газарт бол \groupname командыг хэрэглэнэ
@@ -151,13 +151,15 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 
 \pagestyle{plain} % Тезисийн загварыг дуудах хүртэлх толгой мөрийн суурь загвар
 
-\include{FrontBackMatter/Titlepage} % Нүүр хуудас
+% \include{FrontBackMatter/Titlepage} % Нүүр хуудас
 \include{FrontBackMatter/Plan-Review} % Төлөвлөгөө, гүйцэтгэл, шүүмжийн хуудас
-\include{FrontBackMatter/Declaration} % Мэдэгдлийн хуудас
+% \include{FrontBackMatter/Declaration} % Мэдэгдлийн хуудас
 % \include{FrontBackMatter/Quotation} % Ишлэл хуудас
+
 \include{FrontBackMatter/Abstract} % Ажлын хураангуй
-\include{FrontBackMatter/Acknowledgments} % Талархлын хуудас
+% \include{FrontBackMatter/Acknowledgments} % Талархлын хуудас
 \include{FrontBackMatter/Abbreviations} % Товчилсон үгс
+
 % \include{FrontBackMatter/Constants} % Ашигласан тогтмолууд
 % \include{FrontBackMatter/Symbols} % Ашгласан таних тэмдгүүд
 % \include{FrontBackMatter/Dedication} % Ажлыг хэнд зориулсан
@@ -166,9 +168,9 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %-------------------------------------------------------------------------------
 
-\tableofcontents % Гарчиг хэвлэх
-\listoffigures % Зургийн жагсаалт хэвлэх
-\listoftables % Хүснэгтийн жагсаалт хэвлэх
+% \tableofcontents % Гарчиг хэвлэх
+% \listoffigures % Зургийн жагсаалт хэвлэх
+% \listoftables % Хүснэгтийн жагсаалт хэвлэх
 
 %-------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -180,12 +182,12 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 \myformat % Бүлгийн нэрийг тусгай хуудсанд хэвлэх
 
 % Тезисийн бүлгүүдийг Chapters хавтаснаас бие даасан файл байдлаар оруулах
-%\pagecolor{Beige}
+\pagecolor{Beige}
 \include{Chapters/Chapter1}
-%\pagecolor{Beige}
-% \include{Chapters/Chapter2} 
-%\pagecolor{Beige}
-% \include{Chapters/Chapter3}
+\pagecolor{Beige}
+\include{Chapters/Chapter2}
+\pagecolor{Beige}
+\include{Chapters/Chapter3}
 %\pagecolor{Beige}
 % \include{Chapters/Chapter5}
 % \include{Chapters/Conclusion} 
