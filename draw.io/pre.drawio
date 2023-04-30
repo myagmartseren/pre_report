@@ -1,9 +1,36 @@
-<mxfile host="app.diagrams.net" modified="2023-04-30T21:50:04.992Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" version="21.2.2" etag="-KwEb2jJIaYFW3TtoplB" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-30T21:51:00.211Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="I43OdEsWAXTNHQ-GgnHh" version="21.2.2" type="github">
   <diagram name="Page-1" id="Rq3Q4BhCuvKfKIIZRxey">
-    <mxGraphModel>
+    <mxGraphModel dx="1434" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="wFTgeDRGnWRpIOXT3_nk-1" value="Proxy Server" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_on_premise;strokeColor=#5A6C86;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#5A6C86;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="190" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="wFTgeDRGnWRpIOXT3_nk-2" value="Alice" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="380" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wFTgeDRGnWRpIOXT3_nk-3" value="Bob" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="380" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wFTgeDRGnWRpIOXT3_nk-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wFTgeDRGnWRpIOXT3_nk-2" target="wFTgeDRGnWRpIOXT3_nk-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="410" as="sourcePoint" />
+            <mxPoint x="430" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wFTgeDRGnWRpIOXT3_nk-5" value="Bob-ын нийтийн түлхүүрээр&lt;br&gt;ширлэгсэн&lt;br&gt;өгөгдөл" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-35;" vertex="1" parent="1">
+          <mxGeometry x="140" y="290" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wFTgeDRGnWRpIOXT3_nk-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wFTgeDRGnWRpIOXT3_nk-3" target="wFTgeDRGnWRpIOXT3_nk-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="280" as="sourcePoint" />
+            <mxPoint x="490" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wFTgeDRGnWRpIOXT3_nk-7" value="RG ашиглан Charlie болон өөрийн хувийн түлхүүрээр түлхүүр үүсгэж явуулна" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=40;" vertex="1" parent="1">
+          <mxGeometry x="510" y="280" width="150" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
