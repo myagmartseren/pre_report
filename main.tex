@@ -40,6 +40,7 @@
 \usepackage[utf8]{inputenc} % Олон улсын тэмдэгт оруулахад хэрэгтэй
 \usepackage[T2A]{fontenc} % Олон улсын тэмдэгтийн гаралтын кодчилол
 \usepackage[mongolian]{babel}
+\usepackage{unicode-math}
 
 \usepackage{titlesec}
 \usepackage[table]{xcolor}
@@ -197,7 +198,6 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 %-------------------------------------------------------------------------------
 
 \appendix % Дараах "chapters" нь Хавсралт болохыг LaTex -д хэлэх
-
 % Тезисийн бүлгүүдийг Appendices хавтаснаас бие даасан файл байдлаар оруулах
 % \pagecolor{beeige}
 % \include{Appendices/AppendixA}
@@ -215,7 +215,8 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 
 \printbibliography[heading=bibliography,title={Ном зүй}]
 
-%-------------------------------------------------------------------------------
+% \addbibresource{references.bib}
 
+%-------------------------------------------------------------------------------
 \end{document}  
  
