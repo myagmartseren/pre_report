@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-09T05:19:30.271Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="95JG2Uq2IlQOE4RgOiCY" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-09T05:40:59.111Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="gPHqSU2PKx6ygBRhntME" version="21.2.9" type="github">
   <diagram name="Page-1" id="wI1fdkJvy2t74JOKBYiG">
     <mxGraphModel dx="1433" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -10,7 +10,7 @@
         <mxCell id="Qyqt4qmGO3x9_SsaCPHr-2" value="үйлчилгээ үзүүлэгч" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="570" y="270" width="40" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-3" value="&lt;b&gt;Өгөгдөл 1&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-3" value="&lt;b&gt;Өгөгдөл 1&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
           <mxGeometry x="140" y="80" width="140" height="120" as="geometry" />
         </mxCell>
         <mxCell id="Qyqt4qmGO3x9_SsaCPHr-4" value="Боб" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Qyqt4qmGO3x9_SsaCPHr-3">
@@ -22,7 +22,7 @@
         <mxCell id="Qyqt4qmGO3x9_SsaCPHr-6" value="Сөүл" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Qyqt4qmGO3x9_SsaCPHr-3">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-8" value="&lt;b&gt;Өгөгдөл 2&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-8" value="&lt;b&gt;Өгөгдөл 2&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
           <mxGeometry x="140" y="240" width="140" height="120" as="geometry" />
         </mxCell>
         <mxCell id="Qyqt4qmGO3x9_SsaCPHr-9" value="Алис" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Qyqt4qmGO3x9_SsaCPHr-8">
@@ -34,7 +34,7 @@
         <mxCell id="Qyqt4qmGO3x9_SsaCPHr-11" value="Бэлфорт" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Qyqt4qmGO3x9_SsaCPHr-8">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-12" value="&lt;b&gt;Өгөгдөл 3&lt;br&gt;&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-12" value="&lt;b&gt;Өгөгдөл 3&lt;br&gt;&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
           <mxGeometry x="140" y="400" width="140" height="120" as="geometry" />
         </mxCell>
         <mxCell id="Qyqt4qmGO3x9_SsaCPHr-13" value="Синди" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="Qyqt4qmGO3x9_SsaCPHr-12">
@@ -108,6 +108,15 @@
             <mxPoint x="400" y="440" as="sourcePoint" />
             <mxPoint x="450" y="390" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-36" value="" style="shape=mxgraph.signs.safety.no;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="260" y="240" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-37" value="" style="shape=mxgraph.signs.safety.no;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="260" y="80" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Qyqt4qmGO3x9_SsaCPHr-38" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.circle;strokeColor=#222222;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="260" y="400" width="20" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
