@@ -26,7 +26,18 @@
     \item Нэг чиглэлт (Unidirectional PRE)
     \item Хоёр чиглэлт (Bidirectional PRE)
 \end{itemize}
-Мөн олон дахин шифрлэх боломжтой болон нэг л дахин шифрлэх боломжтой гэж хуваадаг.
+Мөн олон дахин шифрлэх боломжтой болон нэг удаагийн шифрлэх боломжтой гэж хуваадаг.
+
+Прокси дахин шифрлэх схем дараах хэсгүүдээс тогтоно.
+\begin{itemize}
+    \item \textbf{Нийтийн параметрүүд:} Нийтлэг нийтэд байдаг параметрүүд. Түлхүүрийн урт зэрэг.
+
+    \item \textbf{Нийтийн болон нууц түлхүүрийн хослол:} Хэрэглэгч бүр нийтийн/нууц түлхүүрийг үүсгэдэг. Нийтийн түлхүүрийг нийтэд тавьж, харин хувийн түлхүүр нь зөвхөн хэрэглэгч өөртөө үлдээнэ. Боб Алис руу мессеж илгээхдээ Алисын нийтийн түлхүүрийг ашиглан шифрлэж, Алис түүний хувийн түлхүүрийг ашиглан тайлна.
+    
+    \item \textbf{Төлөөлөгчийн түлхүүрүүд:} Хэрэглэгч бүр энд rkAlice→Bob гэж тэмдэглэсэн дурын төлөөлөгчид (дахин шифрлэх) түлхүүр үүсгэж болно. rkAlice→Bob тулд Алис прокси дахин шифрлэлтийн алгоритмыг ашиглан хувийн түлхүүрээ Бобын нийтийн түлхүүртэй хослуулан түлхүүр гаргаж авна. Гаргаж авсан түлхүүрээр дахин шифрлэж төлөөлөгчийн хувийн түлхүүрээр тайлах боломжтой болно.
+    
+    \item \textbf{Шифрлэгдсэн текст:} Хэрэглэгч ямар нэгэн нийтийн түлхүүрээр мессежийг (энгийн текст) шифрлэх үед шифр текст үүснэ.
+\end{itemize}
 
 Нэг чиглэлт \emph{PRE (KE, RG, E, R, D)} хэсгүүдээс тогтоно.
 \begin{enumerate}
@@ -37,10 +48,10 @@
 \end{enumerate}
 
 \begin{figure}[ht]
-\centering
-\includegraphics[scale=0.5]{Figures/PRE.drawio.png}
-\caption[Proxy Re-encryption scheme]{Прокси дахин шифрлэх}
-\label{fig:PRE_Scheme}
+    \centering
+    \includegraphics[scale=0.5]{Figures/PRE.drawio.png}
+    \caption[Proxy Re-encryption scheme]{Прокси дахин шифрлэх}
+    \label{fig:PRE_Scheme}
 \end{figure}
 
 Давуу талууд:
@@ -68,6 +79,7 @@
 
     \item \textbf{Аюулгүй Имэйл Холбоо:} Илгээгч нь хувийн түлхүүрээ шуудангийн сервер эсвэл бусад зуучлагчтай хуваалцахын оронд өөрийн түлхүүрээр имэйлээ шифрлэж, дахин шифрлэх ажиллагааг прокси руу шилжүүлэх боломжтой. Дараа нь прокси нь хүлээн авагчийн түлхүүрээр имэйлийг дахин шифрлэх боломжтой бөгөөд зөвхөн хүлээн авагч нь мессежний кодыг тайлж унших боломжтой.
 \end{itemize}
+
 % \subsection*{Прокси дахин шифрлэх схемийн ашиглаж буй системүүд}
 % \begin{itemize}
 %     \item Google Cloud Platform (GCP) Cloud Түлхүүр Удирдлагын Үйлчилгээ: GCP Үүлэн Түлхүүр Удирдлагын Үйлчилгээ нь үүлэнд суурилсан программууд, гар утасны программууд болон вэб программууд зэрэг төрөл бүрийн программуудын шифрлэлтийн түлхүүрүүдийг хадгалахад ашиглагдаж болно. PRE нь хэрэглэгчдэд шифрлэлтийн түлхүүрийг хуваалцах шаардлагагүйгээр шифрлэгдсэн өгөгдлийг бусадтай хуваалцах боломжийг олгоход ашиглаж болно. Жишээлбэл, компани GCP Cloud Түлхүүр Удирдлагын Үйлчилгээг ашиглан үйлчлүүлэгчийнхээ мэдээллийн шифрлэлтийн түлхүүрүүдийг хадгалах боломжтой. Дараа нь компани PRE-г ашиглан ажилтнууддаа шифрлэлтийн түлхүүрүүдийг ажилчидтайгаа хуваалцахгүйгээр хэрэглэгчийн мэдээлэлд хандах боломжийг олгох боломжтой. Энэ нь ажилтны компьютер эвдэрсэн ч гэсэн хэрэглэгчийн мэдээллийн нууцлалыг хамгаалахад тусална.
@@ -77,28 +89,90 @@
 %	SECTION 2
 %-------------------------------------------------------------------------------
 \section{Хөгжүүлэх технологи, хэл сонгох}
-Прокси дахин шифрлэлт файл хуваалцах системийг хөгжүүлэхэд ашиглах технологийн судалгаа хийсэн.
+Прокси дахин шифрлэлт схемийг ашиглан файл хуваалцах систем хөгжүүлэхээр болсон.Хөгжүүлэлтэнд хэрэгтэй хэл болон технологи сонгосон.
+
 Систем хоёр хэсгээс тогтох ба. API сервер болон хэрлэгч талын программ. Пайтон маш олон нэмэлт сангууд байдаг маш том нийгэмлэгтэй (community) хэл. Бичиглэл хялбар олон давуу талтай тул пайтон хэлийг сонгосон.
 Үүнд:
-\begin{itemize}
-    \item \textbf{Flask}\\
-    Пайтон хэл дээр бичсэн веб хөгжүүлэхэд зориулагдсан фреймворк юм. Хөнгөхөн олон сан шаардахгүй. Сурахад хялбар өөрийн хүссэн загвараар загварчилж хийх боломжтой. RESTFul API гаргахад хялбар. Хэрэгтэй гэвэл нэмэлт сан ORM зэрэг өөр сангууд суулгаж хамт ашиглах боломжтой.
-    \item \textbf{Tkinter}\\
-    Хэрэглэгчийн интерфейс (GUI) үүсгэхэд ашигладаг Python номын сан юм. Tcl/TK GUI дээр суурилсан. Линукс виндовс зэрэг олон үйлдлийн системийг дэмждэг. Нэмэлт сангуудтай ажиллах боломжтой.
-    \item \textbf{pyUmbral}\\
-    Прокси дахин шифрлэлтийг файтон дээр хэрэгжүүлсэн пайтоны сан юм. OpenSSL болон Cryptography.io ашиглсан.
-    \item \textbf{Google Cloud Platform}\\
-    Гуравдагч тал болох сервер проксиг (API) deploy хийж байршуулах шаардлагатай0. Google Cloud нь маш олон давуу талтай ба үнэгүй туршиж үзэх 300 долларын эрхтэй тул сонгосон.
-\end{itemize}
+\subsubsection*{\textbf{Flask framework}}
+Пайтон хэл дээр бичсэн веб хөгжүүлэхэд зориулагдсан  фреймворк юм. Хөнгөхөн олон нэмэлт сан шаардахгүй хэрэгтэй сангуудаа суулгаад хөгжүүлэх боломжтой. Сурахад хялбар өөрийн хүссэн загвараар загварчилж хийх боломжтой. RESTFul API гаргахад хялбар. Хэрэгтэй гэвэл нэмэлт сан ORM зэрэг өөр сангууд суулгаж хамт ашиглах боломжтой.
+\begin{lstlisting}[language=Python]
+from flask import Flask
+
+app = Flask(__name__)
+        
+@app.route("/")
+    def hello_world():
+        return "<p>Hello, World!</p>"
+@app.get("/")
+    def hello_world():
+        return "<p>Hello, get request!</p>"
+\end{lstlisting}
+app.route endpoint бичих боломжтой маш хялбар мөн хурдан бичих боломжтой. 
+\subsubsection*{\textbf{Tkinter}}
+Хэрэглэгчийн интерфейс (GUI) үүсгэхэд ашигладаг Python номын сан юм. Tcl/TK GUI дээр суурилсан. Линукс виндовс зэрэг олон үйлдлийн системийг дэмждэг. Нэмэлт сангуудтай ажиллах боломжтой.
+\begin{lstlisting}[language=Python]
+import tkinter as tk
+
+root = tk.Tk()
+# Create a label widget.
+label = tk.Label(root, text="Hello, world!")
+# Create a button widget.
+button = tk.Button(root, text="Click me!")
+# Add the label and button widgets to the root window.
+label.pack()
+button.pack()
+# Start the main loop.
+root.mainloop()
+\end{lstlisting}
+Энгийн бичхэд хялбар нийгэмлэг сайн.
+\subsubsection*{\textbf{pyUmbral}}
+Прокси дахин шифрлэлтийг файтон дээр хэрэгжүүлсэн пайтоны сан юм. OpenSSL болон Cryptography.io ашиглсан.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.5]{Figures/umbral.png}
+    \caption[pyUmbral]{pyUmbral}
+    \label{fig:pyUmbral}
+\end{figure}
+
+ECIES-KEM болон BBS98 санаа авсан нэг чиглэлтэй дахин шифрлэлтийн сан. pyUmbral функцуудийг ерөнхийд нь гурав ангилсан.
+\begin{enumerate}
+    \item Түлхүүр үүсгэх алгоритмууд.
+    \begin{itemize}
+        \item KeyGen()
+        \item ReKeyGen(skA, pkB, N, t)
+    \end{itemize}
+    \item Encapsulation болон Decapsulation
+    \begin{itemize}
+        \item Encapsulate(pkA)
+        \item Decapsulate(skA, capsule)
+    \end{itemize}
+    \item Re-Encapsulation болон Fragments Decapsulation.
+    \begin{itemize}
+        \item ReEncapsulation(kF rag, capsule)
+        \item DecapsulateFrags(skB, {cF ragi}ti=1, capsule):
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection*{\textbf{Google Cloud Platform}}
+Гуравдагч тал болох сервер проксиг (API) deploy хийж байршуулах шаардлагатай0. Google Cloud нь маш олон давуу талтай ба үнэгүй туршиж үзэх 300 долларын эрхтэй тул сонгосон.
 
 %-------------------------------------------------------------------------------
 %	SECTION 3
 %-------------------------------------------------------------------------------
 \section{Хөгжүүлэлтийн орчин бэлдэх}
-Пайтон хэл нь орчин бүрдүүлэхэд хялбар ба виртуал орчин үүсгэж хэрэгтэй сангуудыг татаж суулгах боломжтой. Бүх линукс тархцад пайтон хэл нь суулгалцан байдаг тул хэрэгтэй сангуудыг татаж суулгахад л хангалтай.
+Пайтон хэл нь орчин бүрдүүлэхэд хялбар ба виртуал орчин үүсгэж хэрэгтэй сангуудыг татаж суулгах боломжтой. Бүх линукс тархцад пайтон хэл нь суулгалцан байдаг тул хэрэгтэй сангуудыг татаж суулгахад л хангалтай. 
 
-Прокси дахин шифрлэлт сан пайтон дээр сан бичих гэж оролдсон. JHU-MTI Прокси дахин шифрлэлтийн сан нь C/C++ хэл дээр бичигдсэн байсан. Пайтон хэлний setuptools болон C хэлний "python.h" санг ашиглан пайтоны сан бичих гэж оролдож үзсэн. JHU-MTI сан нь MIRCL санг ашигладаг.
-\\
+Пайтон хэл дээр хөгжүүлэлт хийхийн тулд прокси дахин шифрлэлтийн пайтон дээр сан бичих гэж оролдож үзсэн.
+JHU-MIT Proxy Re-cryptography Library (PRL) нь хэд хэдэн прокси дахин шифрлэлтийн схемийг хэрэгжүүлсэн нээлттэй эхтэй сан юм. Алгоритмуудыг Жонс Хопкинсийн Их Сургууль болон Массачусетсийн Технологийн Их Сургуулийн судлаачид боловсруулсан бөгөөд Жузеппе Атениезе, Кевин Фу, Мэттью Грин, Сюзан Хохенбергер нарын анхны судалгаанд үндэслэсэн. 
+JHU-MTI Прокси дахин шифрлэлтийн сан нь C/C++ хэл дээр бичигдсэн байсан. Пайтон хэлний setuptools болон C хэлний "python.h" санг ашиглан пайтоны сан бичих гэж оролдож үзсэн. JHU-MTI сан нь MIRCL санг ашигладаг.
+
+PRL сан нь хоёр схемийг хэрэгжүүлдэг.
+\begin{itemize}
+    \item \textbf{PRE1:} алгоритм нь Decisional Billinear Diffie-Hellman Assumption (DBDH) дагуу аюулгүй.
+    \item \textbf{PRE2:} алгоритм нь Decisional Billinear Inversion Assumption (DBDHI)-ийн дагуу аюулгүй.
+\end{itemize}
+
+PRE1 схемийг пайтон сан руу хөрвүүлэх гэж оролдсон.\\
 \textbf{Ерөнхий бүтэц}
 \dirtree{%
 .1 ..
@@ -113,9 +187,204 @@
 .2 src.
 .3 pypre.cpp.
 .2 userguide.pdf.
+}\\
+\begin{itemize}
+    \item \textbf{example} хэсэг тестийн код байрлана.
+    \item \textbf{external} хэсэгт PRL сан болон MIRCL сан байна.
+    \item Сангуудыг compile хийж \textbf{lib*.a} файл гаргаж авна.
+    \item \textbf{setup.py} файл нь тухайн package-ын мэдээлэл байна.
+    \item \textbf{pypre.cpp} С++ функцийг нэмэлт сан *.a-аас дуудаж пайтон руу хөрвүүлэх хэсэг. 
+\end{itemize}
+
+\begin{lstlisting}[language=Python, caption={setup.py}]
+import glob
+import os
+
+from setuptools import Extension, setup
+
+os.environ["CC"] = "g++"
+os.environ["CXX"] = "g++"
+
+module = Extension(
+    "pypre",
+    language="c++",
+    sources=[f for f in glob.glob('src/*.cpp')]+
+    ['external/proxylib/proxylib_pre1.cpp'],
+    include_dirs=["external/miracl", "external/proxylib"],
+    library_dirs=["external/miracl", "external/proxylib"],
+    libraries=["miracl", "proxylib"],
+    extra_objects=['external/miracl/libmiracl.a','external/proxylib/libproxylib.a']
+)
+
+setup(name='pypre',
+      license='Apache',
+      author="Myagmartseren",
+      author_email='myagmartseren7@gmail.com',
+      description='Proxy Re-encryption Python library',
+      url='https://github.com/myagmartseren/pre_python',
+      ext_modules=[module],
+      include_dirs=['external/proxylib','external/miracl'],
+)
+\end{lstlisting}
+
+\textbf{pypre.py} файл дотор үндсэн C++ кодны санг дуудаж пайтонруу хөрвүүлэх хэсэг байна. 
+Хэрэгтэй толгой файлыг include хийнэ. Proxylib.h болон miracle гэх мэт сангууд нь setup.py хавсарсан сангууд юм.
+
+\begin{lstlisting}[language=C, caption={setup.py}]
+#define PY_SSIZE_T_CLEAN
+#include <zzn.h>
+#include <miracl.h>
+
+#include <Python.h>
+#include <proxylib.h>
+#include <proxylib_pre1.h>    
+\end{lstlisting}
+
+\noindent Class бүрийг C-ын struct-ыг ашиглаж зарлаж өгнө. Class-ын method-уудыг мөн адил зарлаж өгнө. 
+
+\begin{lstlisting}[language=C, caption={setup.py}]
+typedef struct
+{
+    PyObject_HEAD
+    ProxyCiphertext_PRE1 *proxyCiphertext_PRE1;
+} PyProxyCiphertext_PRE1;
+
+static PyObject* PyPRE1_generate_params(PyObject *self, PyObject *args) {
+    if (PyTuple_Size(args) !=1){
+        PyErr_SetString(PyExc_RuntimeError, "Should have CurveParams");
+        return Py_None;
+    }
+
+    PyObject *params = PyTuple_GetItem(args, 0);
+
+    if (!PyCurveParams_Check(params)) {
+        PyErr_SetString(PyExc_RuntimeError, "Failed to cast CurveParams");
+        return Py_None;
+    }
+
+    PyCurveParams *pyParams = (PyCurveParams *)params;
+
+    int result = PRE1_generate_params(*pyParams->params);
+    if (!result) {
+        PyErr_SetString(PyExc_RuntimeError, "Failed to generate params");
+        return PyBool_FromLong(result);
+    }
+
+    Py_INCREF(Py_None);
+    return PyBool_FromLong(result);
 }
 
-Илүү үр дүнтэй хурдан хийхийн тулд pyUmbral санг сонгож ашигласан.
+static PyObject* PyPRE1_keygen(PyObject *self, PyObject *args) {
+    if (PyTuple_Size(args) !=3){
+        PyErr_SetString(PyExc_RuntimeError, "Should have 3 parameters");
+        return Py_None;
+    }
+
+    PyObject *tempParams = PyTuple_GetItem(args, 0);
+    if (!PyCurveParams_Check(tempParams)) {
+        PyErr_SetString(PyExc_RuntimeError, "Failed to cast CurveParams");
+        return Py_None;
+    }
+    PyCurveParams *pyParams = (PyCurveParams *)tempParams;
+    printf("pyParams->params address: %p\n", pyParams->params);
+
+    PyObject *tempPublicKey = PyTuple_GetItem(args, 1);
+    if (!PyProxyPK_PRE1_Check(tempPublicKey)) {
+        PyErr_SetString(PyExc_RuntimeError, "Failed to cast PK_PRE1");
+        return Py_None;
+    }
+    PyProxyPK_PRE1 *pyPublicKey = (PyProxyPK_PRE1 *)tempPublicKey;
+    printf("pyPublicKey->publicKey address: %p\n", pyPublicKey->publicKey);
+
+    PyObject *tempSecretKey = PyTuple_GetItem(args, 2);
+    if (!PyProxySK_PRE1_Check(tempSecretKey)) {
+        PyErr_SetString(PyExc_RuntimeError, "Failed to cast SK_PRE1");
+        return Py_None;
+    }
+    PyProxySK_PRE1 *pySecretKey = (PyProxySK_PRE1 *)tempSecretKey;
+    printf("pySecretKey->secretKey address: %p\n", pySecretKey->secretKey);
+
+    int result = PRE1_keygen(*pyParams->params, *pyPublicKey->publicKey, *pySecretKey->secretKey);
+    
+    Py_INCREF(Py_None);
+    return PyBool_FromLong(result);
+}
+
+static PyMethodDef module_methods[] = {
+    {"PRE1_generate_params", PyPRE1_generate_params, METH_VARARGS, "Generate curve parameters for the PRE1 scheme."},
+    {"PRE1_keygen", PyPRE1_keygen, METH_VARARGS, "Generate curve parameters for the PRE1 scheme."},
+
+    {NULL, NULL, 0, NULL}
+};
+\end{lstlisting}
+\noindent Классуудыг модулд нэмж өгнө. Мөн статик функцуулийг нэмж өгнө.
+
+\begin{lstlisting}[language=C, caption={setup.py}]
+static struct PyModuleDef module_def = {
+    PyModuleDef_HEAD_INIT,
+    "pypre",
+    0,  // m_doc
+    -1, // m_size
+    module_methods,// m_methods
+    /*
+    NULL,                 // m_reload
+    NULL,                 // m_traverse
+    NULL,                 // m_clear
+    NULL                  // m_free
+    */
+};
+
+PyMODINIT_FUNC PyInit_pypre(void);
+
+PyObject *PyInit_pypre(void)
+{
+    extern PyTypeObject PyCurveParamsType;
+    if (PyType_Ready(&PyCurveParamsType) < 0)
+        return NULL;
+
+    PyObject *module = PyModule_Create(&module_def);
+
+    Py_INCREF(&PyCurveParamsType);
+    if (PyModule_AddObject(module, "CurveParams", (PyObject *)&PyCurveParamsType) < 0)
+    {
+        Py_DECREF(&PyCurveParamsType);
+        Py_DECREF(module);
+        return NULL;
+    }
+
+    extern PyTypeObject PyProxyPK_PRE1Type;
+    if (PyType_Ready(&PyProxyPK_PRE1Type) < 0)
+        return NULL;
+
+    Py_INCREF(&PyProxyPK_PRE1Type);
+    if (PyModule_AddObject(module, "PK_PRE1", (PyObject *)&PyProxyPK_PRE1Type) < 0)
+    {
+        Py_DECREF(&PyProxyPK_PRE1Type);
+        Py_DECREF(module);
+        return NULL;
+    }
+
+    extern PyTypeObject PyProxySK_PRE1Type;
+    if (PyType_Ready(&PyProxySK_PRE1Type) < 0)
+        return NULL;
+
+    Py_INCREF(&PyProxySK_PRE1Type);
+    if (PyModule_AddObject(module, "SK_PRE1", (PyObject *)&PyProxySK_PRE1Type) < 0)
+    {
+        Py_DECREF(&PyProxySK_PRE1Type);
+        Py_DECREF(module);
+        return NULL;
+    }
+    // PyModule_AddObject(module, "__version__", PyUnicode_FromString(VERSION));
+
+    if (PyErr_Occurred())
+        PyErr_SetString(PyExc_ImportError, "pypre: init failed");
+
+    return module;
+}
+\end{lstlisting}
+
+\noindent PRE1 хөрвүүлж байсан боловч цаг хугацааны хувьд амжихгүй болсон тул pyUmbral санг ашиглахаар шийдсэн.
 
 %-------------------------------------------------------------------------------
 %	SECTION 4
