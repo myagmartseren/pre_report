@@ -240,7 +240,7 @@ setup(name='pypre',
 #include <proxylib_pre1.h>    
 \end{lstlisting}
 
-\noindent Class бүрийг C-ын struct-ыг ашиглаж зарлаж өгнө. Class-ын method-уудыг мөн адил зарлаж өгнө. 
+\noindent Класс бүрийг C-ын struct-ыг ашиглаж зарлаж өгнө.  
 
 \begin{lstlisting}[language=C, caption={setup.py}]
 typedef struct
@@ -248,7 +248,11 @@ typedef struct
     PyObject_HEAD
     ProxyCiphertext_PRE1 *proxyCiphertext_PRE1;
 } PyProxyCiphertext_PRE1;
+\end{lstlisting}
 
+\noindent Классын method-уудыг зарлаж өгнө. Буцах утга нь хөгжүүлэх функц ашиглана.
+
+\begin{lstlisting}[language=C, caption={Method-ууд}]
 static PyObject* PyPRE1_generate_params(PyObject *self, PyObject *args) {
     if (PyTuple_Size(args) !=1){
         PyErr_SetString(PyExc_RuntimeError, "Should have CurveParams");
@@ -273,53 +277,19 @@ static PyObject* PyPRE1_generate_params(PyObject *self, PyObject *args) {
     Py_INCREF(Py_None);
     return PyBool_FromLong(result);
 }
+\end{lstlisting}
 
-static PyObject* PyPRE1_keygen(PyObject *self, PyObject *args) {
-    if (PyTuple_Size(args) !=3){
-        PyErr_SetString(PyExc_RuntimeError, "Should have 3 parameters");
-        return Py_None;
-    }
+\noindent Бичсэн method-уудыг класст хамааруулна классдаа нэмж өгөн.
 
-    PyObject *tempParams = PyTuple_GetItem(args, 0);
-    if (!PyCurveParams_Check(tempParams)) {
-        PyErr_SetString(PyExc_RuntimeError, "Failed to cast CurveParams");
-        return Py_None;
-    }
-    PyCurveParams *pyParams = (PyCurveParams *)tempParams;
-    printf("pyParams->params address: %p\n", pyParams->params);
-
-    PyObject *tempPublicKey = PyTuple_GetItem(args, 1);
-    if (!PyProxyPK_PRE1_Check(tempPublicKey)) {
-        PyErr_SetString(PyExc_RuntimeError, "Failed to cast PK_PRE1");
-        return Py_None;
-    }
-    PyProxyPK_PRE1 *pyPublicKey = (PyProxyPK_PRE1 *)tempPublicKey;
-    printf("pyPublicKey->publicKey address: %p\n", pyPublicKey->publicKey);
-
-    PyObject *tempSecretKey = PyTuple_GetItem(args, 2);
-    if (!PyProxySK_PRE1_Check(tempSecretKey)) {
-        PyErr_SetString(PyExc_RuntimeError, "Failed to cast SK_PRE1");
-        return Py_None;
-    }
-    PyProxySK_PRE1 *pySecretKey = (PyProxySK_PRE1 *)tempSecretKey;
-    printf("pySecretKey->secretKey address: %p\n", pySecretKey->secretKey);
-
-    int result = PRE1_keygen(*pyParams->params, *pyPublicKey->publicKey, *pySecretKey->secretKey);
-    
-    Py_INCREF(Py_None);
-    return PyBool_FromLong(result);
-}
-
+\begin{lstlisting}[language=C, caption={Method-уудыг класст хамааруулна.}]
 static PyMethodDef module_methods[] = {
     {"PRE1_generate_params", PyPRE1_generate_params, METH_VARARGS, "Generate curve parameters for the PRE1 scheme."},
-    {"PRE1_keygen", PyPRE1_keygen, METH_VARARGS, "Generate curve parameters for the PRE1 scheme."},
-
     {NULL, NULL, 0, NULL}
 };
 \end{lstlisting}
-\noindent Классуудыг модулд нэмж өгнө. Мөн статик функцуулийг нэмж өгнө.
+\noindent Классуудыг модульд нэмж өгнө. Мөн сангийн статик функцүүдийг нэмж өгнө.
 
-\begin{lstlisting}[language=C, caption={setup.py}]
+\begin{lstlisting}[language=C, caption={Модуль нь init хийхэд зарлах классууд}]
 static struct PyModuleDef module_def = {
     PyModuleDef_HEAD_INIT,
     "pypre",

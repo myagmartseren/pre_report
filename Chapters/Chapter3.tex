@@ -256,56 +256,124 @@
 %	SECTION 2
 %-------------------------------------------------------------------------------
 \section{Системийн загвар}
+Файл хуваалцах үйлчилгээ нь хоёр хэсгээс тогтоно. Хэрэглэгчийн интерфейс нь десктоп программ ба тухайн төхөөрөмж дээр татаж суулгана.
 
 \subsection*{Үйл ажилгааны диаграмм}
+Файл эзэмшигч болон файл хэрэглэгчийн системд нэвтрэхээс файл хуваалцах хүртэл үйл ажиллагааны диаграммыг Зураг \ref{fig:delegatee_diagram} \ref{fig:delegatee_diagram}-т харуулав.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Figures/delegator.drawio.png}
+    \caption[pyUmbral]{Файл эзэмшигчийн үйл ажилгааны диаграмм}
+    \label{fig:delegator_diagram}
+\end{figure}
 
-\tikzstyle{decision} = [diamond, draw, 
-    text width=7em, text badly centered, node distance=3cm, inner sep=0pt]
-\tikzstyle{block} = [rectangle, draw, 
-    text width=7em, text centered, rounded corners, minimum height=3em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse, node distance=4cm,
-    minimum height=2em]
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Figures/delegatee.drawio.png}
+    \caption[pyUmbral]{Файл хэрэглэгчийн үйл ажилгааны диаграмм}
+    \label{fig:delegatee_diagram}
+\end{figure}
+
+% \tikzstyle{decision} = [diamond, draw, 
+%     text width=7em, text badly centered, node distance=3cm, inner sep=0pt]
+% \tikzstyle{block} = [rectangle, draw, 
+%     text width=7em, text centered, rounded corners, minimum height=3em]
+% \tikzstyle{line} = [draw, -latex']
+% \tikzstyle{cloud} = [draw, ellipse, node distance=4cm,
+%     minimum height=2em]
     
-\begin{center}
-\begin{tikzpicture}[node distance = 2cm, auto]
-    % Place nodes
-    \node [block] (init) {Загварыг идэвхижүүлэх};
-    \node [cloud, left of=init] (expert) {Эксперт};
-    \node [cloud, right of=init] (system) {Систем};
-    \node [block, below of=init] (identify) {Шинэ загвар гаргах};
-    \node [block, below of=identify] (evaluate) {Шинэ загварыг үнэлэх};
-    \node [block, left of=evaluate, node distance=4cm] (update) {Загварыг шинэчлэх};
-    \node [decision, below of=evaluate] (decide) {Загвар сайжирсан уу?};
-    \node [block, below of=decide, node distance=3cm] (stop) {Төгсгөл};
-    % Draw edges
-    \path [line] (init) -- (identify);
-    \path [line] (identify) -- (evaluate);
-    \path [line] (evaluate) -- (decide);
-    \path [line] (decide) -| node [near start] {тийм} (update);
-    \path [line] (update) |- (identify);
-    \path [line] (decide) -- node {үгүй}(stop);
-    \path [line,dashed] (expert) -- (init);
-    \path [line,dashed] (system) -- (init);
-    \path [line,dashed] (system) |- (evaluate);
-\end{tikzpicture}
-\end{center}
+% \begin{center}
+% \begin{tikzpicture}[node distance = 2cm, auto]
+%     % Place nodes
+%     \node [cloud] (init) {Эхлэл};
+%     \node [decision, below of=init] (decide) {Бүртгэл эсэх?};
+%     \node [block, right of=decide] (register) {Бүртгүүлэх};
+%     % Draw edges
+%     \path [line] (init) -- (decide);
+%     % \path [line] (identify) -- (evaluate);
+%     % \path [line] (evaluate) -- (decide);
+%     % \path [line] (decide) -| node [near start] {тийм} (update);
+%     % \path [line] (update) |- (identify);
+%     % \path [line] (decide) -- node {үгүй}(stop);
+%     % \path [line,dashed] (expert) -- (init);
+%     % \path [line,dashed] (system) -- (init);
+%     % \path [line,dashed] (system) |- (evaluate);
+% \end{tikzpicture}
+% \end{center}
 
 \subsection*{Өгөгдлийн сангийн бүтэц}
+Өгөгдлийн сан нийт дөрвөн хүснэгттэй. Хүснэгт бүрт created\_at, update\_at, deleted\_at гэсэн талбарууд байгаа GORM-аас санаа аван эдгээр талбаруудыг нэмсэн. 
 
-\begin{figure}[ht]
+\begin{itemize}
+    \item \textbf{created\_at} нь тухайн мөр үүсэх үед цагийг бүртгэж авдаг
+    \item \textbf{update\_at} нь тухайн мөр өөрчлөгдөх хийх цагийг бүртгэж авдаг
+    \item \textbf{deleted\_at} нь тухайн мөрийг устгаагүй байхад хоосон байдаг ба устгасан цагийг бүртгэж авдаг.
+\end{itemize}
+
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{Figures/database.drawio.png}
     \caption[pyUmbral]{Өгөгдлийн сангийн бүтэц}
     \label{fig:database}
 \end{figure}
 
+\begin{itemize}
+    \item \textbf{User} хэрэглэгчийн хүснэгт. Хэрлэгчийн хувийн түлхүүрийг өгөгдлийн санд хадгалахгүй ба файл хэлбэрээр тухайн төхөөрөмж дээр хадгалж явна. 
+    \begin{itemize}
+        \item ID
+        \item username
+        \item first\_name
+        \item last\_name
+        \item email
+        \item password
+        \item public\_key
+        \item signer\_key
+    \end{itemize}
+    \item \textbf{Share} хүснэгт нь файлыг олон хүнтэй хуваалцах боломжтой болгоно.
+    \begin{itemize}
+        \item ID
+        \item delegator\_id
+        \item delagatee\_id
+        \item file\_id
+        \item is\_active
+        \item re\_key
+        \item capsule
+    \end{itemize}
+    \item \textbf{File} Файлын мэдээлэл мөн түлхүүрийг хадгалана.
+    \begin{itemize}
+        \item user\_id
+        \item name
+        \item type
+        \item path
+    \end{itemize}
+    \item \textbf{Log} лог хадгалах зориулалтай хүснэгт
+    \begin{itemize}
+        \item user\_id
+        \item file\_id
+        \item action
+        \item date
+    \end{itemize}
+\end{itemize}
 %-------------------------------------------------------------------------------
 %	SECTION 3
 %-------------------------------------------------------------------------------
 \section{Системийн хөгжүүлэх}
 
 \section*{Хэрэглэгчийн интерфейс}
+Хэрэглэгчийн интерфейсийн хувьд зөвхөн дэсктоп программ интерфейстэй байх ба сервер буюу прокси нь ямар нэг график хэрэглэгчийн интерфейс байхгүй зөвхөн API байна. 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.3]{Figures/Login.png}
+    \caption[Usecase diagram]{Нэвтрэх цонх}
+    \label{fig:login}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.3]{Figures/Register.png}
+    \caption[Usecase diagram]{Бүртгүүлэх цонх}
+    \label{fig:register}
+\end{figure}
 
 %-------------------------------------------------------------------------------
 %	SECTION 4
