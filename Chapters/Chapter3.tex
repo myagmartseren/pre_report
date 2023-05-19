@@ -9,7 +9,7 @@
 %	SECTION 1
 %-------------------------------------------------------------------------------
 \section{Системийн шаардлага}
-Систем нь түлхүүр үүсгэх файл хадгалах сервер, өгөгдөл эзэмшигч, өгөгдөл хэрэглэгч гэсэн үндсэн гурван хэсгээс тогтоно. Өгөгдөл эзэмшигч бүртгэл үүсгэж өөрийн нийтийн түлхүүр болон хувийн түлхүүрийг үүсгэж авна. Файл шифрлэх болон тайлах үйлдлийг өөрийн төхөөрөмж дээр үйлдэнэ.
+Систем нь түлхүүр үүсгэх файл хадгалах сервер, өгөгдөл эзэмшигч, өгөгдөл хэрэглэгч гэсэн үндсэн гурван хэсгээс тогтоно. Өгөгдөл эзэмшигч бүртгэл үүсгэж өөрийн нийтийн түлхүүр болон хувийн түлхүүрийг үүсгэж авна.Хувийн түлхүүрийг өөрийн төхөөрөмж дээр авч явах ёстой учир десктоп программ бичих ёстой. Файл шифрлэх болон тайлах үйлдлийг өөрийн төхөөрөмж дээр үйлдэнэ. Мөн ямар нэг ReKey зэрэг хувийн түлхүүртэй холбоотой үйлдлүүдийг хэрлэгч өөрийн төхөөрөмж дээр хийх ёстой.\\
 
 \textbf{Системийн оролцогч}
 \begin{itemize}
@@ -34,6 +34,8 @@
 \begin{itemize}
     \item Системд өөрийн бүртгэлийг үүсгэх
     \item Өөрт хуваацлсан файлын жагсаалт
+    \item Өөрийн хуваацлсан файлын жагсаалт
+    \item Файлыг хэн хэнтэй хуваалцсан жагсаалт
     \item Файлыг татаж авах
     \item Шифрлэсэн файлыг тайлах
 \end{itemize}
@@ -48,16 +50,17 @@
 \end{enumerate}
 
 \subsection*{Юзкейс диаграмм}
-Системийн хэрлэгчид ямар үйлдлүүдийг системд хийж болохыг харуулсан хэрэглээний диаграммыг харууллаа.
-\begin{figure}[ht]
+Хэрэглэгчид болох файл эзэмшигч болон файл хэрлэгч нь ямар үйлдлүүдийг системд хийж болохыг харуулсан хэрэглээний диаграмм (Зураг \ref{fig:usecase})-т харууллаа.
+
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{Figures/usecase.drawio.png}
     \caption[Usecase diagram]{Юзкейс диаграмм}
     \label{fig:usecase}
 \end{figure}
-\subsection*{Юзкейс тодорхойлолт}
 
-\begin{table}
+\subsection*{Юзкейс тодорхойлолт}
+\begin{table}[H]
     \label{tab:treatments}
     \footnotesize
     \centering
@@ -81,8 +84,8 @@
     \caption{Бүртгүүлэх юзкейсийн тодорхойлолт}
 \end{table}
 
-\begin{table}
-    \label{tab:treatments}
+\begin{table}[H]
+    % \label{tab:treatments}
     \footnotesize
     \centering
     \begin{tabularx}{\textwidth}{|>{\hsize=0.3\hsize}X|>{\hsize=0.7\hsize}X|}
@@ -105,8 +108,8 @@
     \caption{Нэвтрэх юзкейсийн тодорхойлолт}
 \end{table}
 
-\begin{table}
-    \label{tab:treatments}
+\begin{table}[H]
+    % \label{tab:treatments}
     \footnotesize
     \centering
     \begin{tabularx}{\textwidth}{|>{\hsize=0.3\hsize}X|>{\hsize=0.7\hsize}X|}
@@ -122,9 +125,13 @@
         Өмнөх нөхцөл & Систем нэвтэрсэн байх\\
         \hline
         Үндсэн урсгал &
-            \item Файлыг сонгох
-            \item Санамсаргүй байдлаар түлхүүр үүсгэх
-            \item Файлыг тухайн түлхүүрээр шифрлэх
+        \begin{minipage}{\linewidth}
+            \begin{itemize}
+                \item Файлыг сонгох
+                \item Санамсаргүй байдлаар түлхүүр үүсгэх
+                \item Файлыг тухайн түлхүүрээр шифрлэх
+            \end{itemize}
+        \end{minipage}
         \\
         \hline
         Дараах нөхцөл & Тухайн төхөөрөмж дээр шифрлэгдсэн байх\\
@@ -133,8 +140,7 @@
     \caption{Файл шифрлэх юзкейсийн тодорхойлолт}
 \end{table}
 
-\begin{table}
-    \label{tab:treatments}
+\begin{table}[H]
     \footnotesize
     \centering
     \begin{tabularx}{\textwidth}{|>{\hsize=0.3\hsize}X|>{\hsize=0.7\hsize}X|}
@@ -143,25 +149,29 @@
         \hline
         ID & 4 \\
         \hline
-        Үндсэн тоглогч & Файл эзэмшигч\\
+        Үндсэн тоглогч & Файл эзэмшигч \\
         \hline
-        Тодорхойлолт & Шифрлэсэн файлыг серверт хуулна\\
+        Тодорхойлолт & Шифрлэсэн файлыг серверт хуулна \\
         \hline
-        Өмнөх нөхцөл & Файлыг шифрэлсэн байх\\
+        Өмнөх нөхцөл & Файлыг шифрэлсэн байх \\
         \hline
         Үндсэн урсгал &
-            \item Шифрлэсэн файлыг серверт илгээж
-            \item Файлын мэдээллийг өгөгдлийн санд нэмэх 
+        \begin{minipage}{\linewidth}
+            \begin{itemize}
+                \item Шифрлэсэн файлыг серверт илгээж
+                \item Файлын мэдээллийг өгөгдлийн санд нэмэх 
+            \end{itemize}
+        \end{minipage}
         \\
         \hline
-        Дараах нөхцөл & Файлын талаар мэдээллийг авах боломжтой болох\\
+        Дараах нөхцөл & Файлын талаар мэдээллийг авах боломжтой болох \\
         \hline
     \end{tabularx}
     \caption{Шифрлэсэн файл серверт байршуулах юзкейсийн тодорхойлолт}
 \end{table}
 
-\begin{table}
-    \label{tab:treatments}
+\begin{table}[H]
+    % \label{tab:treatments}
     \footnotesize
     \centering
     \begin{tabularx}{\textwidth}{|>{\hsize=0.3\hsize}X|>{\hsize=0.7\hsize}X|}
@@ -177,18 +187,23 @@
         Өмнөх нөхцөл & Файлыг серверт байршуулсан байх\\
         \hline
         Үндсэн урсгал &
+        \begin{minipage}{\linewidth}
+            \begin{itemize}
             \item Файл хуваалцах хүний нийтийн түлхүүрийг авах
             \item Дахин шифрлэх түлхүүр үүсгэх
-            \item Файлыг дахин шифрлэх\\
+            \item Файлыг дахин шифрлэх
+            \end{itemize}
+        \end{minipage}
+        \\
         \hline
-        Дараах нөхцөл & Шифрлэсэн файлыг төхөөрөмж дээр тайлхда бэлэн болох\\
+        Дараах нөхцөл & Шифрлэсэн файлыг төхөөрөмж дээр тайлхад бэлэн болох\\
         \hline
     \end{tabularx}
     \caption{Файл хуваалцах юзкейсийн тодорхойлолт}
 \end{table}
 
-\begin{table}
-    \label{tab:treatments}
+\begin{table}[H]
+    % \label{tab:treatments}
     \footnotesize
     \centering
     \begin{tabularx}{\textwidth}{|>{\hsize=0.3\hsize}X|>{\hsize=0.7\hsize}X|}
@@ -211,8 +226,8 @@
     \caption{Файл татах юзкейсийн тодорхойлолт}
 \end{table}
 
-\begin{table}
-    \label{tab:treatments}
+\begin{table}[H]
+    % \label{tab:treatments}
     \footnotesize
     \centering
     \begin{tabularx}{\textwidth}{|>{\hsize=0.3\hsize}X|>{\hsize=0.7\hsize}X|}
@@ -244,12 +259,53 @@
 
 \subsection*{Үйл ажилгааны диаграмм}
 
+\tikzstyle{decision} = [diamond, draw, 
+    text width=7em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, 
+    text width=7em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse, node distance=4cm,
+    minimum height=2em]
+    
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {Загварыг идэвхижүүлэх};
+    \node [cloud, left of=init] (expert) {Эксперт};
+    \node [cloud, right of=init] (system) {Систем};
+    \node [block, below of=init] (identify) {Шинэ загвар гаргах};
+    \node [block, below of=identify] (evaluate) {Шинэ загварыг үнэлэх};
+    \node [block, left of=evaluate, node distance=4cm] (update) {Загварыг шинэчлэх};
+    \node [decision, below of=evaluate] (decide) {Загвар сайжирсан уу?};
+    \node [block, below of=decide, node distance=3cm] (stop) {Төгсгөл};
+    % Draw edges
+    \path [line] (init) -- (identify);
+    \path [line] (identify) -- (evaluate);
+    \path [line] (evaluate) -- (decide);
+    \path [line] (decide) -| node [near start] {тийм} (update);
+    \path [line] (update) |- (identify);
+    \path [line] (decide) -- node {үгүй}(stop);
+    \path [line,dashed] (expert) -- (init);
+    \path [line,dashed] (system) -- (init);
+    \path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+\end{center}
+
 \subsection*{Өгөгдлийн сангийн бүтэц}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.5]{Figures/database.drawio.png}
+    \caption[pyUmbral]{Өгөгдлийн сангийн бүтэц}
+    \label{fig:database}
+\end{figure}
 
 %-------------------------------------------------------------------------------
 %	SECTION 3
 %-------------------------------------------------------------------------------
 \section{Системийн хөгжүүлэх}
+
+\section*{Хэрэглэгчийн интерфейс}
 
 %-------------------------------------------------------------------------------
 %	SECTION 4
