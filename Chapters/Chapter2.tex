@@ -95,7 +95,7 @@
 Үүнд:
 \subsubsection*{\textbf{Flask framework}}
 Пайтон хэл дээр бичсэн веб хөгжүүлэхэд зориулагдсан  фреймворк юм. Хөнгөхөн олон нэмэлт сан шаардахгүй хэрэгтэй сангуудаа суулгаад хөгжүүлэх боломжтой. Сурахад хялбар өөрийн хүссэн загвараар загварчилж хийх боломжтой. RESTFul API гаргахад хялбар. Хэрэгтэй гэвэл нэмэлт сан ORM зэрэг өөр сангууд суулгаж хамт ашиглах боломжтой.
-\begin{lstlisting}[language=Python, caption={Энгийн API үүсгэж буй код}]
+\begin{lstlisting}[language=Python, caption={Энгийн API үүсгэж буй код}, captionpos=b]
 from flask import Flask
 
 app = Flask(__name__)
@@ -110,7 +110,7 @@ app = Flask(__name__)
 app.route endpoint бичих боломжтой маш хялбар мөн хурдан бичих боломжтой. 
 \subsubsection*{\textbf{Tkinter}}
 Хэрэглэгчийн интерфейс (GUI) үүсгэхэд ашигладаг Python номын сан юм. Tcl/TK GUI дээр суурилсан. Линукс виндовс зэрэг олон үйлдлийн системийг дэмждэг. Нэмэлт сангуудтай ажиллах боломжтой.
-\begin{lstlisting}[language=Python, caption={Энгийн цонх үүсгэж буй код}]
+\begin{lstlisting}[language=Python, caption={Энгийн цонх үүсгэж буй код}, captionpos=b]
 import tkinter as tk
 
 root = tk.Tk()
@@ -205,7 +205,7 @@ PRE1 схемийг пайтон сан руу хөрвүүлэх гэж оро�
     \item \textbf{pypre.cpp} С++ функцийг нэмэлт сан *.a-аас дуудаж пайтон руу хөрвүүлэх хэсэг. 
 \end{itemize}
 
-\begin{lstlisting}[language=Python, caption={setup.py}]
+\begin{lstlisting}[language=Python, caption={setup.py}, captionpos=b]
 import glob
 import os
 
@@ -261,7 +261,7 @@ typedef struct
 
 \noindent Классын method-уудыг зарлаж өгнө. Буцах утга нь хөгжүүлэх функц ашиглана.
 
-\begin{lstlisting}[language=C, caption={Method-ууд}]
+\begin{lstlisting}[language=C, caption={Method-ууд}, captionpos=b]
 static PyObject* PyPRE1_generate_params(PyObject *self, PyObject *args) {
     if (PyTuple_Size(args) !=1){
         PyErr_SetString(PyExc_RuntimeError, "Should have CurveParams");
@@ -290,7 +290,7 @@ static PyObject* PyPRE1_generate_params(PyObject *self, PyObject *args) {
 
 \noindent Бичсэн method-уудыг класст хамааруулна классдаа нэмж өгөн.
 
-\begin{lstlisting}[language=C, caption={Method-уудыг класст хамааруулна.}]
+\begin{lstlisting}[language=C, caption={Method-уудыг класст хамааруулна.}, captionpos=b]
 static PyMethodDef module_methods[] = {
     {"PRE1_generate_params", PyPRE1_generate_params, METH_VARARGS, "Generate curve parameters for the PRE1 scheme."},
     {NULL, NULL, 0, NULL}
