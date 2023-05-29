@@ -260,27 +260,30 @@
 %-------------------------------------------------------------------------------
 \section{Системийн загвар}
 Файл хуваалцах үйлчилгээ нь хоёр хэсгээс тогтоно. Хэрэглэгчийн интерфейс нь десктоп программ ба тухайн төхөөрөмж дээр татаж суулгана.
-Десктоп программ өөр дээр шифрлэх болон шифрийг тайлах үйлдлийг хийнэ. Сервер хэрэгтэй мэдээллийг хангаж хоёр хэрэглэгчийг холбож өгнө.
+Десктоп программ өөр дээр шифрлэх болон шифрийг тайлах үйлдлийг хийнэ. Сервер хэрэгтэй мэдээллийг хангаж хоёр хэрэглэгчийг холбож өгнө. 
+Файлыг шифрлэхдээ тэгш хэмт шифрлэх алгоритм ашигласнаар илүү хурдан шифрлэх боломжтой. Тэгш хэмт шифрлэх алгоритмуудаас хамгийн сайн нь AES алгоритм.
+
+Прокси дахин шифрлэх схемийг зөвхөн тэгш хэмт шифрийн түлхүүр дээр ашиглана.
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.4]{Figures/main_diagram.drawio.png}
+    \includegraphics[scale=0.4]{Figures/system_schemes/main_diagram.drawio.png}
     \caption[Usecase diagram]{Ерөнхий загвар}
     \label{fig:main_scheme}
 \end{figure}
 
 \subsection*{Үйл ажилгааны диаграмм}
-Файл эзэмшигч болон файл хэрэглэгчийн системд нэвтрэхээс файл хуваалцах хүртэл үйл ажиллагааны диаграммыг Зураг \ref{fig:delegatee_diagram} \ref{fig:delegator_diagram}-т харуулав.
+Файл эзэмшигч болон файл хэрэглэгчийн системд нэвтрэхээс файл хуваалцах хүртэл ерөнхий үйл ажиллагааны диаграммыг Зураг \ref{fig:delegatee_diagram} \ref{fig:delegator_diagram}-т харуулав.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{Figures/delegator.drawio.png}
+    \includegraphics[scale=0.4]{Figures/system_schemes/delegator.drawio.png}
     \caption[pyUmbral]{Файл эзэмшигчийн үйл ажилгааны диаграмм}
     \label{fig:delegator_diagram}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{Figures/delegatee.drawio.png}
+    \includegraphics[scale=0.4]{Figures/system_schemes/delegatee.drawio.png}
     \caption[pyUmbral]{Файл хэрэглэгчийн үйл ажилгааны диаграмм}
     \label{fig:delegatee_diagram}
 \end{figure}
@@ -296,7 +299,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{Figures/database.drawio.png}
+    \includegraphics[scale=0.4]{Figures/system_schemes/database.drawio.png}
     \caption[pyUmbral]{Өгөгдлийн сангийн бүтэц}
     \label{fig:database}
 \end{figure}
@@ -345,25 +348,36 @@
 \section{Системийн хөгжүүлэх}
 
 \section*{Хэрэглэгчийн интерфейс}
-Хэрэглэгчийн интерфейсийн хувьд зөвхөн дэсктоп программ интерфейстэй байх ба сервер буюу прокси нь ямар нэг график хэрэглэгчийн интерфейс байхгүй зөвхөн API байна.
+Хэрэглэгчийн интерфейсийн хувьд зөвхөн дэсктоп программ интерфейстэй байх ба сервер буюу прокси нь ямар нэг график хэрэглэгчийн интерфейс байхгүй зөвхөн API байна. 
 
-\begin{figure}[ht]
+Figma дээр гаргасан загвар. Зураг \ref*{fig:figma}
+\begin{figure}[H]
     \centering
-    \includegraphics[scale=0.25]{Figures/Login.png}
+    \includegraphics[scale=0.3]{Figures/ui/figma.png}
+    \caption[Usecase diagram]{Figma загвар}
+    \label{fig:figma}
+\end{figure}
+
+\noindent Хэрэглэгч өөрийн имэйл хаяг болон нууц үг ашиглан нэвтрэх ч орно \ref{fig:login}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.25]{Figures/ui/login.png}
     \caption[Usecase diagram]{Нэвтрэх цонх}
     \label{fig:login}
 \end{figure}
 
-\begin{figure}[ht]
+\noindent Хэрэглэгч өөрийн мэдээллэл болон нууц үг хэрлэгчийн нэрийг оруулж бүртгэл үүсгэнэ.\ref{fig:register}
+\begin{figure}[H]
     \centering
-    \includegraphics[scale=0.25]{Figures/Register.png}
+    \includegraphics[scale=0.25]{Figures/ui/register.png}
     \caption[Usecase diagram]{Бүртгүүлэх цонх}
     \label{fig:register}
 \end{figure}
 
-\begin{figure}[ht]
+\noindent Үндсэн цонх хэрлэгч өөрийн файлыг байршуулах боломжтой. Мөн өөрт хуваалцсан файлуудын жагсаалт болон файлыг тайлж хадаглах боломжтой. \ref{fig:home}  
+\begin{figure}[H]
     \centering
-    \includegraphics[scale=0.25]{Figures/Main.png}
+    \includegraphics[scale=0.25]{Figures/ui/home_with_files.png}
     \caption[Usecase diagram]{Үндсэн цонх}
     \label{fig:home}
 \end{figure}
