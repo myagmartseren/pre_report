@@ -1,9 +1,58 @@
-<mxfile host="app.diagrams.net" modified="2023-05-29T03:38:56.142Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" version="21.3.5" etag="wkfiX35va9NyXN77qfCT" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-29T03:52:32.076Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="4pRKRhjjqkEBi8fCnZhm" version="21.3.5" type="github">
   <diagram name="Page-1" id="Y5Jbh_TfWzf0LjOodfeo">
-    <mxGraphModel>
+    <mxGraphModel dx="1434" dy="714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-1" value="Хэрэглэгч" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="c6z2gEo7IU8s0TH7YThm-4" target="c6z2gEo7IU8s0TH7YThm-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
+          <mxGeometry x="50" y="240" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="c6z2gEo7IU8s0TH7YThm-6" target="c6z2gEo7IU8s0TH7YThm-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-6" value="Десктоп&lt;br&gt;интерфейс" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
+          <mxGeometry x="240" y="160" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-7" value="API сервер" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
+          <mxGeometry x="400" y="160" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="c6z2gEo7IU8s0TH7YThm-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
+          <mxGeometry x="275" y="240" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-11" value="Өгөгдлийн сан" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
+          <mxGeometry x="560" y="160" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-14" value="1. Файл нэмэх товч дээр дарах" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="250" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="c6z2gEo7IU8s0TH7YThm-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
+          <mxGeometry x="435" y="240" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-19" value="2. Шифрлэсэн файлыг мэдээлэлтэйн цуг явуулна" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="275" y="280" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-21" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
+          <mxGeometry x="595" y="240" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-23" value="3. Файлын мэдээллийг өгөгдлийн сан руу хадгална" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="445" y="320" width="155" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
