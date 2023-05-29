@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-29T03:52:32.076Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="4pRKRhjjqkEBi8fCnZhm" version="21.3.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-29T03:52:58.339Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="PDdTNk62HWJupEu5QW6y" version="21.3.5" type="github">
   <diagram name="Page-1" id="Y5Jbh_TfWzf0LjOodfeo">
     <mxGraphModel dx="1434" dy="714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -19,6 +19,9 @@
         <mxCell id="c6z2gEo7IU8s0TH7YThm-6" value="Десктоп&lt;br&gt;интерфейс" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
           <mxGeometry x="240" y="160" width="80" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="c6z2gEo7IU8s0TH7YThm-7" target="c6z2gEo7IU8s0TH7YThm-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="c6z2gEo7IU8s0TH7YThm-7" value="API сервер" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
           <mxGeometry x="400" y="160" width="80" height="40" as="geometry" />
         </mxCell>
@@ -29,6 +32,9 @@
         </mxCell>
         <mxCell id="c6z2gEo7IU8s0TH7YThm-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
           <mxGeometry x="275" y="240" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c6z2gEo7IU8s0TH7YThm-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="c6z2gEo7IU8s0TH7YThm-11" target="c6z2gEo7IU8s0TH7YThm-21">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="c6z2gEo7IU8s0TH7YThm-11" value="Өгөгдлийн сан" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9999FF;" vertex="1" parent="1">
           <mxGeometry x="560" y="160" width="80" height="40" as="geometry" />
