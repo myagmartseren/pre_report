@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-29T04:55:21.896Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="Ht915PVASkksHHUuzzND" version="21.3.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-29T04:55:46.989Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="Y0EDIG8RJ1bNFSMIgaps" version="21.3.5" type="github">
   <diagram name="Page-1" id="4sBRTUmay-Ph992r3ssx">
     <mxGraphModel dx="1147" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -29,10 +29,10 @@
           <mxGeometry x="40" y="103.20999999999998" width="120" height="25" as="geometry" />
         </mxCell>
         <mxCell id="hwyRIZrP5asYk9SuziN2-28" value="Өгөгдлийн сан руу хадгалах" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6666FF;strokeColor=none;" vertex="1" parent="-Vj05g0o3Zj9X7WDF1w2-4">
-          <mxGeometry x="40" y="150" width="120" height="25" as="geometry" />
+          <mxGeometry x="40" y="150" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="hwyRIZrP5asYk9SuziN2-48" value="Шифрлэсэн файл хадгалах" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6666FF;strokeColor=none;" vertex="1" parent="-Vj05g0o3Zj9X7WDF1w2-4">
-          <mxGeometry x="40" y="200" width="120" height="25" as="geometry" />
+          <mxGeometry x="40" y="200" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="-Vj05g0o3Zj9X7WDF1w2-11" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="820" y="185" width="200" height="220" as="geometry" />
@@ -71,7 +71,7 @@
           <mxGeometry x="40" y="165.23000000000002" width="120" height="25" as="geometry" />
         </mxCell>
         <mxCell id="hwyRIZrP5asYk9SuziN2-38" value="Хувийн түлхүүр хадгалах" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F58536;strokeColor=none;" vertex="1" parent="-Vj05g0o3Zj9X7WDF1w2-14">
-          <mxGeometry x="40" y="250" width="120" height="25" as="geometry" />
+          <mxGeometry x="40" y="250" width="120" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
