@@ -267,7 +267,7 @@
 \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.5]{Figures/system_schemes/main_diagram.drawio.png}
-    \caption[Usecase diagram]{Ерөнхий загвар}
+    \caption{Ерөнхий загвар}
     \label{fig:main_scheme}
 \end{figure}
 
@@ -277,14 +277,14 @@
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{Figures/system_schemes/delegator.drawio.png}
-    \caption[pyUmbral]{Файл эзэмшигчийн үйл ажилгааны диаграмм}
+    \caption{Файл эзэмшигчийн үйл ажилгааны диаграмм}
     \label{fig:delegator_diagram}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{Figures/system_schemes/delegatee.drawio.png}
-    \caption[pyUmbral]{Файл хэрэглэгчийн үйл ажилгааны диаграмм}
+    \caption{Файл хэрэглэгчийн үйл ажилгааны диаграмм}
     \label{fig:delegatee_diagram}
 \end{figure}
 
@@ -301,7 +301,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{Figures/system_schemes/database.drawio.png}
-    \caption[pyUmbral]{Өгөгдлийн сангийн бүтэц}
+    \caption{Өгөгдлийн сангийн бүтэц}
     \label{fig:database}
 \end{figure}
 
@@ -310,8 +310,6 @@
           \begin{itemize}
               \item ID
               \item username
-              \item first\_name
-              \item last\_name
               \item email
               \item password
               \item public\_key
@@ -347,39 +345,86 @@
 %	SECTION 3
 %-------------------------------------------------------------------------------
 \section{Системийн хөгжүүлэх}
+Систем хоёр хэсгээс тогтоно.
+
+API сервер буюу гуравдагч хагас итгэмжлэгдсэн талын файлын бүтэц. API нь хэрлэгчийн түлхүүрийг үүсгэнэ хэрлэгчдийг холбож өгнө. Шифрлэгдсэн файлыг хадгалах үүрэгтэй.
+\begin{figure}[H]
+    \dirtree{%
+        .1 ..
+        .2 files.
+        .2 src.
+        .3 config.py.
+        .3 \_\_init\_\_.py.
+        .3 models.py.
+        .3 routes.py.
+        .3 schemas.py.
+        .3 services.py.
+        .3 utils.py.
+        .2 run.py.
+    }
+    \label{fig:service_structure}
+    \caption{API сервисийн файлын бүтэц}
+\end{figure}
+
+Хэрэлэгчийн интерфейс буюу десктоп программ хэсэгийн файлын бүтэц. \textbf{api} серверт хүсэлт явуулах хэсэг. \textbf{views} хэсэгт tkinter-г ашиглах цонх үүсгэх классууд байна.
+
+\begin{figure}[H]
+    \label{fig:desktop_structure}
+    \dirtree{%
+        .1 ..
+        .2 api.
+        .3 \_\_init\_\_.py.
+        .3 auth.py.
+        .3 crud.py.
+        .2 encryption.py.
+        .2 main.py.
+        .2 models.py.
+        .2 requirements.txt.
+        .2 utils.py.
+        .2 setup.py.
+        .2 views.
+        .3 \_\_init\_\_.py.
+        .3 home.py.
+        .3 login.cpp.
+        .3 register.cpp.
+        .3 edit.cpp.
+        .3 pop.cpp.
+    }
+    \caption{Десктоп файлын бүтэц}
+\end{figure}
 
 \subsection*{Хэрэглэгчийн интерфейс}
 Хэрэглэгчийн интерфейсийн хувьд зөвхөн дэсктоп программ интерфейстэй байх ба сервер буюу прокси нь ямар нэг график хэрэглэгчийн интерфейс байхгүй зөвхөн API байна. 
 
-Figma дээр гаргасан загвар. Зураг \ref*{fig:figma}
+Figma дээр гаргасан загвар. (Зураг \ref*{fig:figma})
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{Figures/ui/figma.png}
-    \caption[Usecase diagram]{Figma загвар}
+    \caption{Figma загвар}
     \label{fig:figma}
 \end{figure}
 
-\noindent Хэрэглэгч өөрийн имэйл хаяг болон нууц үг ашиглан нэвтрэх ч орно \ref{fig:login}. 
+\noindent Хэрэглэгч өөрийн имэйл хаяг болон нууц үг ашиглан нэвтрэх ч орно (Зураг \ref{fig:login}). 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.25]{Figures/ui/login.png}
-    \caption[Usecase diagram]{Нэвтрэх цонх}
+    \caption{Нэвтрэх цонх}
     \label{fig:login}
 \end{figure}
 
-\noindent Хэрэглэгч өөрийн мэдээллэл болон нууц үг хэрлэгчийн нэрийг оруулж бүртгэл үүсгэнэ.\ref{fig:register}
+\noindent Хэрэглэгч өөрийн мэдээллэл болон нууц үг хэрлэгчийн нэрийг оруулж бүртгэл үүсгэнэ. (Зураг \ref{fig:register})
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.25]{Figures/ui/register.png}
-    \caption[Usecase diagram]{Бүртгүүлэх цонх}
+    \includegraphics[scale=0.35]{Figures/ui/register.png}
+    \caption{Бүртгүүлэх цонх}
     \label{fig:register}
 \end{figure}
 
-\noindent Үндсэн цонх хэрлэгч өөрийн файлыг байршуулах боломжтой. Мөн өөрт хуваалцсан файлуудын жагсаалт болон файлыг тайлж хадаглах боломжтой. \ref{fig:home}  
+\noindent Үндсэн цонх хэрлэгч өөрийн файлыг байршуулах боломжтой. Мөн өөрт хуваалцсан файлуудын жагсаалт болон файлыг тайлж хадаглах боломжтой. (Зураг \ref{fig:home})
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.25]{Figures/ui/home_with_files.png}
-    \caption[Usecase diagram]{Үндсэн цонх}
+    \caption{Үндсэн цонх}
     \label{fig:home}
 \end{figure}
 
@@ -387,6 +432,54 @@ Figma дээр гаргасан загвар. Зураг \ref*{fig:figma}
 %	SECTION 4
 %-------------------------------------------------------------------------------
 \section{Файл хуваалцах системийг турших}
+Туршилтанд гурван хэрлэгч ашигласан. user болон test нэртэй хэрлэгчидийг бүртгүүлнэ Зураг\ref{fig:register_example}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{Figures/example/register.png}
+    \caption{Бүртгүүлэх цонх жишээ}
+    \label{fig:register_example}
+\end{figure}
+
+Жишээ текст файл үүсгэж өгнө Зураг (\ref{fig:example_data}). Зураг болон бинари файл ч мөн адил болно. Энэ тохиолдолд хурдан үүсгэх зорилгоор текст файл үүсгэв.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Figures/example/example_data.png}
+    \caption{Жишээ өгөгдөл үүсгэнэ}
+    \label{fig:example_data}
+\end{figure}
+
+Файлыг серверт байршиуулсаны дараа хэрэлэгчийн интерфейс харагдах байдал. Зураг (\ref{fig:uploaded_file})
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{Figures/example/uploaded_file.png}
+    \caption{Байршуулсан файл}
+    \label{fig:uploaded_file}
+\end{figure}
+
+Байршуулсан дээр дархад хуваалцах цонх гарж ирэх ба хэрэглэгчийн имэйл хаягийг оруулж хуваалцана. Зураг (\ref{fig:share_example})
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{Figures/example/share.png}
+    \caption{Хуваалцах цонх}
+    \label{fig:share_example}
+\end{figure}
+Файлын хуулцсаны дараа test хэрэглэгчийн бүртгэлээр нэвтрэч орон "Надтай хуваалцсан файл" товч дээр дархад хуваалцсан файл гарч ирнэ Зураг (\ref{fig:shared_file}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{Figures/example/shared_file.png}
+    \caption{Хуваалцсан файл}
+    \label{fig:shared_file}
+\end{figure}
+
+Хуваалцсан файлыг тайлж хадаглах замыг сонгож шифрийг тайлсаны дараа харагдах байдал. \ref{fig:result_decrypt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{Figures/example/shared_file_example.png}
+    \caption{Хуваалцсан файл шифрлэлтийг тайлсаны дараа}
+    \label{fig:result_decrypt}
+\end{figure}
+
 
 %-------------------------------------------------------------------------------
 %	SECTION 5
