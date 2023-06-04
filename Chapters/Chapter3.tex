@@ -290,7 +290,7 @@
 
 
 \subsection*{Өгөгдлийн сангийн бүтэц}
-Өгөгдлийн сан нийт дөрвөн хүснэгттэй. Хүснэгт бүрт created\_at, update\_at, deleted\_at гэсэн талбарууд байгаа GORM-аас санаа аван эдгээр талбаруудыг нэмсэн.
+Өгөгдлийн сан нийт дөрвөн хүснэгттэй. Хүснэгт бүрд created\_at, update\_at, deleted\_at гэсэн талбарууд байгаа GORM-аас санаа аван эдгээр талбаруудыг нэмсэн.
 
 \begin{itemize}
     \item \textbf{created\_at} нь тухайн мөр үүсэх үед цагийг бүртгэж авдаг
@@ -366,7 +366,7 @@ API сервер буюу гуравдагч хагас итгэмжлэгдсэ
     \caption{API сервисийн файлын бүтэц}
 \end{figure}
 
-Хэрэлэгчийн интерфейс буюу десктоп программ хэсэгийн файлын бүтэц. \textbf{api} серверт хүсэлт явуулах хэсэг. \textbf{views} хэсэгт tkinter-г ашиглах цонх үүсгэх классууд байна.
+Хэрэглэгчийн интерфейс буюу десктоп программ хэсгийн файлын бүтэц. \textbf{api} серверт хүсэлт явуулах хэсэг. \textbf{views} хэсэгт tkinter-г ашиглах цонх үүсгэх классууд байна.
 
 \begin{figure}[H]
     \label{fig:desktop_structure}
@@ -412,7 +412,7 @@ Figma дээр гаргасан загвар. (Зураг \ref*{fig:figma})
     \label{fig:login}
 \end{figure}
 
-\noindent Хэрэглэгч өөрийн мэдээллэл болон нууц үг хэрлэгчийн нэрийг оруулж бүртгэл үүсгэнэ. (Зураг \ref{fig:register})
+\noindent Хэрэглэгч өөрийн мэдээлэл болон нууц үг хэрлэгчийн нэрийг оруулж бүртгэл үүсгэнэ. (Зураг \ref{fig:register})
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.35]{Figures/ui/register.png}
@@ -420,7 +420,7 @@ Figma дээр гаргасан загвар. (Зураг \ref*{fig:figma})
     \label{fig:register}
 \end{figure}
 
-\noindent Үндсэн цонх хэрлэгч өөрийн файлыг байршуулах боломжтой. Мөн өөрт хуваалцсан файлуудын жагсаалт болон файлыг тайлж хадаглах боломжтой. (Зураг \ref{fig:home})
+\noindent Үндсэн цонх хэрлэгч өөрийн файлыг байршуулах боломжтой. Мөн өөрт хуваалцсан файлуудын жагсаалт болон файлыг тайлж хадгалах боломжтой. (Зураг \ref{fig:home})
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.25]{Figures/ui/home_with_files.png}
@@ -432,7 +432,7 @@ Figma дээр гаргасан загвар. (Зураг \ref*{fig:figma})
 %	SECTION 4
 %-------------------------------------------------------------------------------
 \section{Файл хуваалцах системийг турших}
-Туршилтанд гурван хэрлэгч ашигласан. user болон test нэртэй хэрлэгчидийг бүртгүүлнэ Зураг\ref{fig:register_example}.
+Туршилтад гурван хэрлэгч ашигласан. user болон test нэртэй хэрлэгчдийг бүртгүүлнэ (Зураг \ref{fig:register_example}).
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{Figures/example/register.png}
@@ -448,7 +448,7 @@ Figma дээр гаргасан загвар. (Зураг \ref*{fig:figma})
     \label{fig:example_data}
 \end{figure}
 
-Файлыг серверт байршиуулсаны дараа хэрэлэгчийн интерфейс харагдах байдал. Зураг (\ref{fig:uploaded_file})
+Файлыг серверт байршуулсны дараа хэрэглэгчийн интерфейс харагдах байдал. Зураг (\ref{fig:uploaded_file})
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.32]{Figures/example/uploaded_file.png}
@@ -463,7 +463,7 @@ Figma дээр гаргасан загвар. (Зураг \ref*{fig:figma})
     \caption{Хуваалцах цонх}
     \label{fig:share_example}
 \end{figure}
-Файлын хуулцсаны дараа test хэрэглэгчийн бүртгэлээр нэвтрэч орон "Надтай хуваалцсан файл" товч дээр дархад хуваалцсан файл гарч ирнэ Зураг (\ref{fig:shared_file}).
+Файлын серверт хуулсны дараа test хэрэглэгчийн бүртгэлээр нэвтрэч орон "Надтай хуваалцсан файл" товч дээр дархад хуваалцсан файл гарч ирнэ (Зураг \ref{fig:shared_file}).
 
 \begin{figure}[H]
     \centering
@@ -472,7 +472,7 @@ Figma дээр гаргасан загвар. (Зураг \ref*{fig:figma})
     \label{fig:shared_file}
 \end{figure}
 
-Хуваалцсан файлыг тайлж хадаглах замыг сонгож шифрийг тайлсаны дараа харагдах байдал. \ref{fig:result_decrypt}
+Хуваалцсан файлыг тайлж хадгалах замыг сонгож шифрийг тайлсны дараа харагдах байдал. \ref{fig:result_decrypt}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{Figures/example/shared_file_example.png}
@@ -480,7 +480,13 @@ Figma дээр гаргасан загвар. (Зураг \ref*{fig:figma})
     \label{fig:result_decrypt}
 \end{figure}
 
-
+Wireshark-р файл байршуулж буй пакетыг барж үзэхэд файлын нэр болон бусад зүйл шифрлээгүй файлын түлхүүр файлыг шифрлэж явуулж байна (Зураг \ref{fig:wireshark_result}).
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{Figures/example/wireshark_result.png}
+    \caption{Wireshark барисан пакет}
+    \label{fig:wireshark_result}
+\end{figure}
 %-------------------------------------------------------------------------------
 %	SECTION 5
 %-------------------------------------------------------------------------------
