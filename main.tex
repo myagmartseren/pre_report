@@ -54,6 +54,7 @@
 \usepackage{colortbl}
 \usepackage{dirtree}
 \usepackage{float}
+\usepackage{pdfpages}
 \tcbuselibrary{skins}
 
 \newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
@@ -197,11 +198,10 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 \appendix % Дараах "chapters" нь Хавсралт болохыг LaTex -д хэлэх
 % Тезисийн бүлгүүдийг Appendices хавтаснаас бие даасан файл байдлаар оруулах
 % \pagecolor{beeige}
-% \include{Appendices/AppendixA}
+\include{Appendices/AppendixA}
 % \pagecolor{beeige}
 % \include{Appendices/AppendixB}
-% \pagecolor{beeige}
-% \include{Appendices/AppendixC}
+% \includepdf[pages=-, fitpaper=true]{presentation.pdf}
 
 %-------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
